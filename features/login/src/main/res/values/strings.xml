@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_fetching">Sorry, something went wrong when fetching rockets</string>
+    <string name="error_refreshing">Sorry, something went wrong when refreshing rockets</string>
+
+    <string name="image_content_description">Image</string>
+</resources>

@@ -1,20 +1,17 @@
 plugins {
-    alias libs.plugins.android.application
+    alias libs.plugins.android.library
     alias libs.plugins.kotlin.android
     alias libs.plugins.kotlin.kapt apply true
+    alias libs.plugins.kotlin.parcelize apply true
     alias libs.plugins.hilt.plugin apply true
 }
 
 apply from: "$rootDir/plugins/android.gradle"
 
-android {
-    namespace "com.willianmaesato.basic"
-}
-
 dependencies {
 
     implementation project(":core")
-    implementation project(":features:login")
+
     api libs.bundles.dagger.api
     kapt libs.bundles.dagger.kapt
     implementation libs.bundles.dagger

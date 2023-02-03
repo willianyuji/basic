@@ -15,5 +15,5 @@ dependencyResolutionManagement {
 rootProject.name = "basic"
 include ':app'
 include ':core'
-//include ':features'
-//include ':features:login'
+include ':features'
+include ':features:login'
