@@ -13,8 +13,8 @@ android {
 
 dependencies {
 
-    implementation project(":core")
-    implementation project(":features:login")
+    implementation project(libs.versions.feature.core.get())
+    implementation project(libs.versions.feature.login.get())
     api libs.bundles.dagger.api
     kapt libs.bundles.dagger.kapt
     implementation libs.bundles.dagger
