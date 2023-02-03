@@ -1,4 +1,4 @@
-package com.willianmaesato.basicandroid
+package com.willianmaesato.core
 
 import org.junit.Test
 

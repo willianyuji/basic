@@ -1,4 +1,4 @@
-package com.willianmaesato.basicandroid
+package com.willianmaesato.basic
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

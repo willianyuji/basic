@@ -1,4 +1,4 @@
-package com.willianmaesato.basicandroid.ui.theme
+package com.willianmaesato.core.ui
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes
