@@ -20,4 +20,6 @@ dependencies {
     implementation libs.bundles.dagger
     implementation libs.bundles.compose
     implementation libs.bundles.android
+//    detektPlugins libs.bundles.detekt
+
 }

@@ -12,7 +12,7 @@ data class LoginUiState(
 ) : Parcelable {
 
     sealed class PartialState {
-        object Loading : PartialState() // for simplicity: initial loading & refreshing
+        object Loading : PartialState()
 
         object Fetched : PartialState()
 

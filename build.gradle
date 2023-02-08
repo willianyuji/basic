@@ -32,6 +32,8 @@ subprojects {
             jvmTarget = JavaVersion.VERSION_11
         }
     }
+
+
 }
 
 task clean(type: Delete) {

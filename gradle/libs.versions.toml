@@ -17,6 +17,7 @@ dagger = "2.37"
 navigation-ktx = "2.5.3"
 timber = "5.0.1"
 material3 = "1.0.1"
+detekt-formatting = "1.22.0"
 # Local libs
 design-system = ":designsystem"
 feature-core = ":core"
@@ -72,6 +73,7 @@ dagger-android-processor = { module = "com.google.dagger:dagger-android-processo
 dagger-hilt = { module = "com.google.dagger:hilt-android", version.ref = "dagger" }
 dagger-hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "dagger" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt-formatting" }
 
 [bundles]
 dagger = ["dagger", "dagger-hilt"]
@@ -82,6 +84,7 @@ compose = ["coil-compose", "compose-activity", "compose-material", "compose-mate
 lifecycle = ["lifecycle-livedataKtx", "lifecycle-runtimeKtx", "lifecycle-viewmodel-compose"]
 networking = ["gson-gson", "okhttp-interceptor", "retrofit-gsonConverter", "retrofit-retrofit"]
 room = ["room-ktx", "room-paging", "room-runtime"]
+detekt = ["detekt-formatting"]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradleplugin" }

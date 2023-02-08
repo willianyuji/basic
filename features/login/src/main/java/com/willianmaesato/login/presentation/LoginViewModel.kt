@@ -14,8 +14,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
-//    private val getRocketsUseCase: GetRocketsUseCase,
-//    private val refreshRocketsUseCase: RefreshRocketsUseCase,
     savedStateHandle: SavedStateHandle,
     loginInitialState: LoginUiState
 ) : BaseViewModel<LoginUiState, PartialState, LoginEvent, LoginIntent>(
