@@ -1,4 +1,4 @@
-package com.willianmaesato.core.component.textfield
+package com.willianmaesato.designsystem.component.textfield
 
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text

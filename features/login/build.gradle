@@ -7,10 +7,16 @@ plugins {
 }
 
 apply from: "$rootDir/plugins/android.gradle"
+apply from: "$rootDir/plugins/flavors.gradle"
+
+android {
+    with flavorConfig
+}
 
 dependencies {
 
-    implementation project(":core")
+    implementation project(libs.versions.core.get())
+    implementation project(libs.versions.design.system.get())
 
     api libs.bundles.dagger.api
     kapt libs.bundles.dagger.kapt

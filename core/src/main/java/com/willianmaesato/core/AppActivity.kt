@@ -66,16 +66,5 @@ private fun MainTopAppBar() {
         title = {
             Text(text = "toolbar")
         },
-
-
-
-
-
-
-
-//        backgroundColor = TopAppBar.centerAlignedTopAppBarColors(
-//            containerColor = MaterialTheme.colorScheme.primary,
-//            titleContentColor = MaterialTheme.colorScheme.onPrimary
-//        )
     )
 }

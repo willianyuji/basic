@@ -9,10 +9,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.willianmaesato.core.component.OutlinedTextFieldPassword
-import com.willianmaesato.core.component.textfield.OutlinedTextFieldText
+import com.willianmaesato.designsystem.component.textfield.OutlinedTextFieldPassword
 import com.willianmaesato.core.extensions.collectAsStateWithLifecycle
 import com.willianmaesato.core.extensions.collectWithLifecycle
+import com.willianmaesato.features.login.BuildConfig
 import com.willianmaesato.features.login.R
 import com.willianmaesato.login.presentation.LoginEvent
 import com.willianmaesato.login.presentation.LoginUiState
@@ -30,11 +30,12 @@ fun LoginRoute(
     LoginScreen(
         uiState = uiState,
         onLoginClicked = {
+
         }
     )
 }
 
-@Composable
+@Composable()
 internal fun LoginScreen(
     uiState: LoginUiState,
     onLoginClicked: () -> Unit
@@ -49,12 +50,14 @@ internal fun LoginScreen(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Button(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(20.dp), onClick = { }, shape = RoundedCornerShape(12.dp)
-                    ) {
-                        Text(text = "Login")
+                    if(BuildConfig.FLAVOR.contentEquals("paid")){
+                        Button(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(20.dp), onClick = { }, shape = RoundedCornerShape(12.dp)
+                        ) {
+                            Text(text = stringResource(id = R.string.login_button))
+                        }
                     }
                 }
             }
@@ -100,7 +103,11 @@ private fun LoginAvailableContent(
     }
 
     Column(modifier = Modifier.padding(20.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-        OutlinedTextFieldText(valueCallBack = { print(it) })
+        com.willianmaesato.designsystem.component.textfield.OutlinedTextFieldText(valueCallBack = {
+            print(
+                it
+            )
+        })
         OutlinedTextFieldPassword(valueCallBack = { print(it) })
     }
 }

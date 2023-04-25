@@ -1,19 +1,57 @@
 plugins {
     alias libs.plugins.android.application
-    alias libs.plugins.kotlin.android
-    alias libs.plugins.kotlin.kapt apply true
+    alias libs.plugins.kotlin.android apply true
     alias libs.plugins.hilt.plugin apply true
+    alias libs.plugins.kotlin.kapt apply true
 }
 
 apply from: "$rootDir/plugins/android.gradle"
+apply from: "$rootDir/plugins/flavors.gradle"
 
 android {
     namespace "com.willianmaesato.basic"
+
+    signingConfigs {
+        release {
+            storeFile file("../.sign/app.keystore")
+            storePassword "storePassword"
+            keyAlias "keyAlias"
+            keyPassword "keyPassword"
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            applicationIdSuffix ".debug"
+            versionNameSuffix '-DEBUG'
+            buildConfigField "String", "ENDPOINT", "\"http://dev\"";
+            buildConfigField "boolean", "REPORT_CRASH", "false"
+        }
+        homolog {
+            signingConfig signingConfigs.release
+            debuggable true
+            applicationIdSuffix ".homolog"
+            versionNameSuffix '-HOMOLOG'
+            buildConfigField "String", "ENDPOINT", "\"http://homolog\"";
+            buildConfigField "boolean", "REPORT_CRASH", "true"
+        }
+        release {
+            signingConfig signingConfigs.release
+            debuggable false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "ENDPOINT", "\"http://prod\"";
+            buildConfigField "boolean", "REPORT_CRASH", "true"
+        }
+    }
+
+    with flavorConfig
 }
 
 dependencies {
 
-    implementation project(libs.versions.feature.core.get())
+    implementation project(libs.versions.core.get())
     implementation project(libs.versions.feature.login.get())
     api libs.bundles.dagger.api
     kapt libs.bundles.dagger.kapt

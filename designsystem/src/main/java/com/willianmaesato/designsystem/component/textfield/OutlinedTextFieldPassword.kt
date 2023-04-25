@@ -1,4 +1,4 @@
-package com.willianmaesato.core.component
+package com.willianmaesato.designsystem.component.textfield
 
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Icon

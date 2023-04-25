@@ -20,7 +20,7 @@ material3 = "1.0.1"
 detekt-formatting = "1.22.0"
 # Local libs
 design-system = ":designsystem"
-feature-core = ":core"
+core = ":core"
 feature-login = ":features:login"
 
 [libraries]

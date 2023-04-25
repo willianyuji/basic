@@ -1,8 +1,6 @@
 plugins {
     alias libs.plugins.android.library
     alias libs.plugins.kotlin.android
-    alias libs.plugins.kotlin.kapt apply true
-    alias libs.plugins.hilt.plugin apply true
 }
 
 apply from: "$rootDir/plugins/android.gradle"
@@ -13,10 +11,5 @@ android {
 }
 
 dependencies {
-
-    api libs.bundles.dagger.api
-    kapt libs.bundles.dagger.kapt
-    implementation libs.bundles.dagger
     implementation libs.bundles.compose
-    implementation libs.bundles.android
 }
